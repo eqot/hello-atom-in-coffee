@@ -24,7 +24,8 @@ module.exports = function(grunt) {
       compile: {
         files: {
           './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee'],
-          './dist/scripts/client/main.js': ['./app/scripts/client/{,**/}*.coffee']
+          './dist/scripts/client/main.js': ['./app/scripts/client/{,**/}*.coffee'],
+          './dist/scripts/client/test-view.js': ['./app/scripts/client/test-view.coffee']
         }
       },
     },

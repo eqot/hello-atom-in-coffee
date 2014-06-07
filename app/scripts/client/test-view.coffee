@@ -1,5 +1,6 @@
-{$, View} = require 'space-pen'
+{View} = require 'space-pen'
 
+module.exports =
 class TestView extends View
   @content: ->
     @div =>
@@ -8,6 +9,3 @@ class TestView extends View
         @li "Apollo"
         @li "Soyuz"
         @li "Space Shuttle"
-
-$ =>
-  $('body').append(new TestView(greeting: 'Hi there'))
