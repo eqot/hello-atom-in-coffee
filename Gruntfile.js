@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     "download-atom-shell": {
-      version: "0.12.7",
+      version: "0.13.0",
       outputDir: "./bin",
       rebuild: true
     },
@@ -23,7 +23,8 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          './dist/scripts/app.js': ['./app/scripts/{,**/}*.coffee']
+          './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee'],
+          './dist/scripts/client/main.js': ['./app/scripts/client/{,**/}*.coffee']
         }
       },
     },
