@@ -23,11 +23,17 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee'],
-          './dist/scripts/client/main.js': ['./app/scripts/client/{,**/}*.coffee'],
-          './dist/scripts/client/test-view.js': ['./app/scripts/client/test-view.coffee']
+          './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee']
         }
       },
+      glob_to_multiple: {
+        expand: true,
+        flatten: true,
+        cwd: './app/scripts/client',
+        src: ['*.coffee'],
+        dest: './dist/scripts/client/',
+        ext: '.js'
+      }
     },
 
     coffee_jshint: {
