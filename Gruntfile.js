@@ -21,6 +21,9 @@ module.exports = function(grunt) {
       html: {
         files: ['./app/*.html'],
         tasks: ['copy:html']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
       }
     },
 
