@@ -18,6 +18,10 @@ module.exports = function(grunt) {
         files: ['./app/scripts/{,**/}*.coffee'],
         tasks: ['coffee_jshint', 'coffee']
       },
+      html: {
+        files: ['./app/*.html'],
+        tasks: ['copy:html']
+      }
     },
 
     coffee: {
