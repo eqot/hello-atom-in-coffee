@@ -18,22 +18,35 @@ module.exports = function(grunt) {
         files: ['./app/scripts/{,**/}*.coffee'],
         tasks: ['coffee_jshint', 'coffee']
       },
+      html: {
+        files: ['./app/*.html'],
+        tasks: ['copy:html']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      }
     },
 
     coffee: {
       compile: {
         files: {
-          './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee'],
-          './dist/scripts/client/main.js': ['./app/scripts/client/{,**/}*.coffee'],
-          './dist/scripts/client/test-view.js': ['./app/scripts/client/test-view.coffee']
+          './dist/scripts/browser/main.js': ['./app/scripts/browser/{,**/}*.coffee']
         }
       },
+      glob_to_multiple: {
+        expand: true,
+        flatten: true,
+        cwd: './app/scripts/client',
+        src: ['*.coffee'],
+        dest: './dist/scripts/client/',
+        ext: '.js'
+      }
     },
 
     coffee_jshint: {
       options: {
         globals: [
-          'console', 'require',
+          'console', 'require', 'module',
           'process', '__dirname'
         ]
       },
