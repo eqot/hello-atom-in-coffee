@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     coffee_jshint: {
       options: {
         globals: [
-          'console', 'require',
+          'console', 'require', 'module',
           'process', '__dirname'
         ]
       },
